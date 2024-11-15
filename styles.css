@@ -85,3 +85,13 @@ background-color: #4caf50
 #expense-list li button:hover {
     background-color: #c0392b;
 }
+#expense-list li span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#expense-list li span::before {
+    content: attr(data-currency);
+    font-size: 14px;
+    margin-right: 5px;
+}
