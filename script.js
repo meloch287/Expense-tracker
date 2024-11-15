@@ -10,6 +10,7 @@ function upUI() {
         const li = document.createElement("li");
         li.innerHTML = `
             ${ex.name} <span>${ex.amount} ₽</span>
+            <button onclick="edit_ex(${i})">Редактировать</button>
             <button onclick="delete_ex(${i})">Удалить</button>
         `;
         document.getElementById("expense-list").appendChild(li);
@@ -32,6 +33,18 @@ document.getElementById("expense").addEventListener("submit", (e) => {
         document.getElementById("expense").reset();
     }
 });
+
+// Editing the flow rate
+function edit_ex(index) {
+    const expense = ex[index];
+    const name = prompt("Введите куда вы потратили:", expense.name);
+    const amount = parseFloat(prompt("Введите сумму которую потратили:", expense.amount));
+
+    if (name && amount) {
+        ex[index] = { name, amount };
+        upUI();
+    }
+}
 
 // Removing the flow rate
 function delete_ex(index) {
