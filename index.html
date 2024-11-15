@@ -11,7 +11,12 @@
         <h1>Трекер расходов</h1>
         <form id="expense">
             <input type="text" id="expense-name" placeholder="Название расхода" required>
-            <input type="number" id="expense-amount" placeholder="Сумма (₽)" required>
+            <input type="number" id="expense-amount" placeholder="Сумма" required>
+            <select id="expense-currency">
+                <option value="RUB">₽</option>
+                <option value="USD">$</option>
+                <option value="EUR">€</option>
+            </select>
             <button type="submit">Добавить</button>
         </form>
         <div id="summary">
