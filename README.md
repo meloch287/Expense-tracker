@@ -19,7 +19,7 @@
 
 ## Как использовать  
 1. Склонируйте репозиторий:  
-     git clone https://github.com/your-username/expense-tracker.git
+     git clone https://github.com/meloch287/expense-tracker.git
      
 2. Перейдите в папку проекта:  
      cd expense-tracker
