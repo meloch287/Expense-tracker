@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расходы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Трекер расходов</h1>
+        <form id="expense">
+            <input type="text" id="expense-name" placeholder="Название расхода" required>
+            <input type="number" id="expense-amount" placeholder="Сумма (₽)" required>
+            <button type="submit">Добавить</button>
+        </form>
+        <div id="summary">
+            <h2>Общие расходы: <span id="total">0</span> ₽</h2>
+        </div>
+        <ul id="expense-list">
+            <!-- Список расходов -->
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
