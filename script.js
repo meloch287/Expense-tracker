@@ -2,7 +2,7 @@ let ex = [];
 
 // Exchange rates (example rates, you can update them as needed)
 const exchangeRates = {
-    USD: 90, // 1 USD = 90 RUB
+    USD: 86, // 1 USD = 90 RUB
     EUR: 100, // 1 EUR = 100 RUB
     RUB: 1 // 1 RUB = 1 RUB
 };
@@ -56,7 +56,7 @@ function edit_ex(i) {
     const amount = parseFloat(prompt("Введите сумму, которую потратили:", ex[i].amount));
     const currency = prompt("Введите валюту (RUB, USD, EUR):", ex[i].currency);
 
-    if (name && amount && currency) {
+    if (name && amount && ["RUB", "USD", "EUR"].includes(currency)) {
         ex[i] = { name, amount, currency };
         upUI();
     } else {
