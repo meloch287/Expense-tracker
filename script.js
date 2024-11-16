@@ -20,7 +20,7 @@ function upUI() {
     document.getElementById("total").textContent = ex.reduce((sum, expense) => sum + expense.amount, 0);
 }
 
-// Adding a flow rate
+// Adding a flow rateы
 document.getElementById("expense").addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -36,9 +36,8 @@ document.getElementById("expense").addEventListener("submit", (e) => {
 
 // Editing the flow rate
 function edit_ex(index) {
-    const expense = ex[index];
-    const name = prompt("Введите куда вы потратили:", expense.name);
-    const amount = parseFloat(prompt("Введите сумму которую потратили:", expense.amount));
+    const name = prompt("Введите куда вы потратили:", ex[index].name);
+    const amount = parseFloat(prompt("Введите сумму которую потратили:", ex[index].amount));
 
     if (name && amount) {
         ex[index] = { name, amount };
