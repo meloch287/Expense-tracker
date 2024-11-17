@@ -68,6 +68,11 @@ function upUI() {
     document.getElementById("total").textContent = totalRUB.toFixed(2);
 }
 
+// Function to check if the name contains only digits
+function isValidName(name) {
+    return !/^\d+$/.test(name);
+}
+
 // Adding an expense
 document.getElementById("expense").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -77,12 +82,12 @@ document.getElementById("expense").addEventListener("submit", (e) => {
     const currency = document.getElementById("expense-currency").value;
     const category = document.getElementById("expense-category").value;
 
-    if (name && amount > 0) {
+    if (name && amount > 0 && isValidName(name)) {
         ex.push({ name, amount, currency, category });
         upUI();
         document.getElementById("expense").reset();
     } else {
-        alert("Пожалуйста, введите корректные данные.");
+        alert("Пожалуйста, введите корректные данные. Название не должно содержать только цифры.");
     }
 });
 
@@ -93,11 +98,11 @@ function edit_ex(i) {
     const currency = prompt("Введите валюту (RUB, USD, EUR):", ex[i].currency);
     const category = prompt("Введите категорию (Еда, Транспорт, Развлечения, Другое):", ex[i].category);
 
-    if (name && amount && ["RUB", "USD", "EUR"].includes(currency) && ["Еда", "Транспорт", "Развлечения", "Другое"].includes(category)) {
+    if (name && amount && isValidName(name) && ["RUB", "USD", "EUR"].includes(currency) && ["Еда", "Транспорт", "Развлечения", "Другое"].includes(category)) {
         ex[i] = { name, amount, currency, category };
         upUI();
     } else {
-        alert("Пожалуйста, введите корректные данные.");
+        alert("Пожалуйста, введите корректные данные. Название не должно содержать только цифры.");
     }
 }
 
