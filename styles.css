@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
     padding: 20px;
     background: #fff;
@@ -29,7 +29,7 @@ form {
     margin-bottom: 20px;
 }
 
-form input {
+form input, form select {
     flex: 1;
     padding: 10px;
     font-size: 16px;
@@ -57,41 +57,68 @@ form button:hover {
     font-size: 18px;
 }
 
-#expense-list {
+#category-summary {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-section {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f4f4f4;
+}
+
+.category-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.category-section ul {
     list-style: none;
     padding: 0;
 }
 
-#expense-list li {
+.category-section ul li {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 10px;
-    background: #f4f4f4;
+    margin-bottom: 5px;
+    background: #fff;
 }
 
-#expense-list li span {
+.category-section ul li span {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-#expense-list li span::before {
+.category-section ul li span::before {
     content: attr(data-currency);
-    font-size: 14px;
+    font-size: 12px;
     margin-right: 5px;
 }
 
-#expense-list li button {
+.category-section ul li button {
     background-color: #e74c3c;
     border: none;
     color: white;
-    padding: 5px 10px;
+    padding: 2px 5px;
     cursor: pointer;
     border-radius: 4px;
 }
 
-#expense-list li button:hover {
+.category-section ul li button:hover {
     background-color: #c0392b;
 }
