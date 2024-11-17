@@ -17,14 +17,23 @@
                 <option value="USD">$</option>
                 <option value="EUR">€</option>
             </select>
+            <select id="expense-category">
+                <option value="Еда">Еда</option>
+                <option value="Транспорт">Транспорт</option>
+                <option value="Развлечения">Развлечения</option>
+                <option value="Другое">Другое</option>
+            </select>
             <button type="submit">Добавить</button>
         </form>
         <div id="summary">
             <h2>Общие расходы: <span id="total">0</span> ₽</h2>
         </div>
-        <ul id="expense-list">
-            <!-- Список расходов -->
-        </ul>
+        <div id="category-summary">
+            <h2>Расходы по категориям:</h2>
+            <div id="category-list">
+                <!-- Список категорий и расходов -->
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
